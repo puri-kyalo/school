@@ -9,24 +9,28 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  {% load static %}
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static 'static/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'static/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{% static 'static/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'static/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'static/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'static/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'static/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'static/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'static/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{% static 'static/css/style.css' %}" rel="stylesheet">
 
   
 </head>
@@ -37,54 +41,60 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Sherri Cupples <br>Exodus Junior School</a></h1>
+      <h1 class="logo me-auto"><a href="{% url 'index' %}">Sherri Cupples <br>Exodus Junior School</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
     
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{% url 'about' %}"><span>About</span> <i class="bi bi-chevron-down"></i></a>
            <ul>
           
-          <li><a href="facts.html">Fact file</a></li>
-          <li><a href="programmes.html">Programmes</a></li>
-          <li><a href="gallery.html"> Gallery</a></li>
+          <li><a href="{% url 'facts' %}">Fact file</a></li>
+          <li><a href="{% url 'programmes' %}">Programmes</a></li>
+          <li><a href="{% url 'gallery' %}"> Gallery</a></li>
            </ul>
         
-          <li><a href="application.html"><span>Application</span> </li></a>
+          <li><a href="{% url 'application' %}"><span>Application</span> </li></a>
             
           
           
            
-               <li><a href="sports.html">Sports</a></li>
+               <li><a href="{% url 'sports' %}">Sports</a></li>
                
            
           
         
          
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="admissions.html" class="get-started-btn">Get Started</a>
+      <a href="{% url 'application' %}" class="get-started-btn">Get Started</a>
 
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   <main id="main">
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>Sports</h2>
-        <p> We play a critical role in shaping individuals and society and give a diverse learning experiences, prepare students for future challenges, and contribute to community development. </p>
+        <h2>Our Programmes</h2>
+        <p> </p>
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= About Section ======= -->
-    <!-- End Testimonials Section -->
+    <!-- ======= events Section ======= -->
+   
+    
+    <!-- End Fact Section -->
+
+    
+    
 
   </main><!-- End #main -->
 
@@ -96,12 +106,12 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Sherri Cupples Exodus Junior School</h3>
+            <h3>Get in Touch</h3>
             <p>
               Lutaso Street <br>
               Chwele town, NY 535022<br>
               Kenya<br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Phone:</strong> +254 718 099 564 <br>
               <strong>Email:</strong> info@example.com<br>
             </p>
           </div>
@@ -112,7 +122,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Programmes</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
@@ -120,23 +130,15 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#"></a>Emergency</li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Student Service Center</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Library</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Games</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#"></a>Application</li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Gallery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Facts</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sports</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Student Information</h4><ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#"></a>Academic Calenders</li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Accomodation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Transport</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Student Finance</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graduation</a></li>
-            </ul>
-          </div>
+          
 
         </div>
       </div>
@@ -164,14 +166,14 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{% static 'static/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'static/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'static/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'static/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'static/vendor/php-email-form/validate.js' %}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'static/js/main.js' %}"></script>
 
 </body>
 
